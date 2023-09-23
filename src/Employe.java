@@ -1,19 +1,18 @@
-public class Employe extends Personnel {
+public class Employe{
     
     // --- Attributs --- //
-
-    Boolean[] conges;
-    Boolean[] teletravail;
-
+    private String nom;
+    private String prenom;
+    public static int _compteur=0;
+    private int id;
+    private int heures_hebdomadaires;
 
     // --- Constructeur --- //
 
-    public Employe(String nom, int heures_hebdomadaires, Boolean[] conges, Boolean[] teletravail) {
-        super(nom, heures_hebdomadaires);
-        this.conges = conges;
-        this.teletravail = teletravail;
-        
+    public Employe(String nom,String prenom, int heures_hebdomadaires) {
+        this.nom=nom;
+        this.prenom=prenom; 
+        this.id=++_compteur;
+        this.heures_hebdomadaires=heures_hebdomadaires;
     }
-
-
 }
