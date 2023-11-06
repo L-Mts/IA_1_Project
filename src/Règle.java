@@ -35,5 +35,19 @@ public class Règle {
 
         return res;
     }
-    
+
+
+    //retourn le modèle d'affichage des règles
+    public String toString(){
+        String resultat="";
+         resultat="R" + this.id + ":\n";
+            for (int i=0; i<this.faits.size()-1; ++i) {
+              resultat+=faits.get(i).getFait();
+              if(faits.size()>1) //s'il y a plusieurs prémice
+                resultat+=" Et ";
+            }
+          resultat+= " Alors "+ this.conclusion;
+          return resultat;
+    }
+  
 }
