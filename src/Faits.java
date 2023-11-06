@@ -10,8 +10,8 @@
 
 public class Faits {
 
-    public int id;
-    public String fait;
+    private int id;
+    private String fait;
 
     /**
      * @function Constructeur Faits
@@ -23,6 +23,14 @@ public class Faits {
     public Faits (int id, String fait) {
         this.id = id;
         this.fait = fait;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public String getFait(){
+        return this.fait;
     }
 
 }
