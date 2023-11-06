@@ -10,8 +10,8 @@
 
 public class Faits {
 
-    int id;
-    String fait;
+    public int id;
+    public String fait;
 
     /**
      * @function Constructeur Faits

@@ -11,14 +11,26 @@ import java.util.ArrayList;
 public class BaseConnue {
     
 
-    ArrayList<Faits> faits;
+    private ArrayList<Faits> faits;
 
     /**
      * @function Constructeur BaseConnue
-     * @param faits : une liste de faits (type ArrayList<Faits>)
+     * Création d'une base avec une liste vide
      */
-    public BaseConnue (ArrayList<Faits> faits) {
-        this.faits = faits;
+    public BaseConnue () {
+        this.faits = new ArrayList<Faits>();
+    }
+
+    
+    /**
+     * @function addFait: ajout d'un fait à la base de fait
+     * @param f : le fait à ajouter
+     * @return : vrai si réussite, faux sinon
+     */
+    public boolean addFait (Faits f) {
+        boolean res = false;
+        if (this.faits.add(f)) res = true;
+        return res;
     }
 
     
