@@ -1,12 +1,41 @@
+/**
+ * Classe BaseConnue
+ * 
+ * Base de faits connus et vérifiés
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
+
 import java.util.ArrayList;
 
 public class BaseConnue {
+    
 
     ArrayList<Faits> faits;
 
+    /**
+     * @function Constructeur BaseConnue
+     * @param faits : une liste de faits (type ArrayList<Faits>)
+     */
     public BaseConnue (ArrayList<Faits> faits) {
         this.faits = faits;
     }
+
+    
+    /**
+     * @function isTrueFait
+     * @param f : un fait
+     * @return : vrai si le fait est présent dans la base de faits
+     *           faux si le fait n'est pas présent dans la base de faits
+     */
+    public boolean isTrueFait (Faits f) {
+        boolean res = false;
+        if (this.faits.contains(f)) res = true;
+        return res;
+    }
+
+
+
 
     /* Méthodes nécessaires:
      * méthode pour vérifier chaque règle
