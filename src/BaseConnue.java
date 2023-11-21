@@ -53,6 +53,10 @@ public class BaseConnue {
         return (this.faits.isEmpty());
     }
 
+    public ArrayList<Fait> getFaits (){
+        return this.faits;
+    }
+
 
 
 }

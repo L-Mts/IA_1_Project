@@ -60,5 +60,9 @@ public class Regle {
           resultat+= " Alors "+ this.conclusion;
           return resultat;
     }
+
+    ArrayList<Fait> getListFaits () {
+        return this.faits;
+    }
   
 }
