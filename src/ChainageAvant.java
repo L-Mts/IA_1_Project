@@ -1,4 +1,6 @@
 public class ChainageAvant {
+
+    /* Va-t-on utiliser cette classe ?? */
     
     /* Une base de fait + une base de règle + une base connue + les méthodes pour faire le chainage avant */
 

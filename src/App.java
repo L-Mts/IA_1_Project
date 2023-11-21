@@ -31,9 +31,7 @@ public class App {
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
 
-        ArrayList<Regle> baseRegle = new ArrayList<Regle>(
-            List.of(r1, r2, r3)
-        );
+        // Utilisation de la classe BaseRegle pour créer une liste regroupant toutes les règles
 
 
         /* --- NOTRE BASE DE FAITS CONNUS --- */
