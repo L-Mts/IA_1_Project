@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Regle {
     
     public int id;
-    private ArrayList<Faits> faits;
-    private Faits conclusion;
-    private int count;
+    private ArrayList<Fait> faits;
+    private Fait conclusion;
 
-    public Regle (int id, ArrayList<Faits> faits, Faits conclusion) {
+
+    public Regle (int id, ArrayList<Fait> faits, Fait conclusion) {
         this.id = id; 
         this.faits = faits;
         this.conclusion = conclusion;
@@ -23,7 +23,7 @@ public class Regle {
     public boolean isTrue (BaseConnue base) {
         boolean res = false;
         int count = 0;
-        for (Faits f : this.faits) {
+        for (Fait f : this.faits) {
             if (base.isTrueFait(f)) {
                 count ++;
             }

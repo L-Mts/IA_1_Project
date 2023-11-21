@@ -21,16 +21,18 @@ public class BaseConnue {
         this.faits = new ArrayList<Fait>();
     }
 
-    
+
     /**
      * @function addFait: ajout d'un fait à la base de fait
      * @param f : le fait à ajouter
      * @return : vrai si réussite, faux sinon
      */
     public boolean addFait (Fait f) {
-        boolean res = false;
-        if (this.faits.add(f)) res = true;
-        return res;
+        return this.faits.add(f);
+    }
+
+    public boolean removeFait (Fait f) {
+        return (this.faits.remove(f));
     }
 
     
@@ -47,10 +49,8 @@ public class BaseConnue {
      * @function isEmpty
      * @return : vrai si la liste des faits de la base connue est vide, faux sinon
      */
-    public boolean isTrueFait (Fait f) {
-        boolean res = false;
-        if (this.faits.contains(f)) res = true;
-        return res;
+    public boolean isEmpty ()  {
+        return (this.faits.isEmpty());
     }
 
 

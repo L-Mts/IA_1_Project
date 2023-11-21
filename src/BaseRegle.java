@@ -18,5 +18,6 @@ public class BaseRegle {
             System.out.println(regle.toString());
         }
     }
+    
 
 }
