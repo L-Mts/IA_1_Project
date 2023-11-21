@@ -9,51 +9,61 @@
 
 import java.util.ArrayList;
 
-public class Règle {
+public class Regle {
     
     public int id;
-    private ArrayList<Faits> faits;
-    private Faits conclusion;
-    private int count;
+    private ArrayList<Fait> faits;
+    private Fait conclusion;
 
-    public Règle (int id, ArrayList<Faits> faits, Faits conclusion) {
+    public Regle (int id, ArrayList<Fait> faits, Fait conclusion) {
         this.id = id; 
         this.faits = faits;
         this.conclusion = conclusion;
-        this.count = 0;
     }
 
     /**
      * @function isTrue
-     * @param BaseConnue base
+     * @param base : classe BaseConnue, une base de faits
      * @return vrai si tous les prédicats font partie de la base de faits, faux sinon
      * 
      * Parcours la liste des prédicats, vérifie leur présence dans la base de faits
+     * Chaînage Avant
      */
     public boolean isTrue (BaseConnue base) {
         boolean res = false;
-        this.faits.forEach ((f) -> {
-            if (base.isTrueFait(f) == true) {
-                this.count ++;
+        int count = 0;
+        for (Fait f : this.faits) {
+            if (base.isTrueFait(f)) {
+                count ++;
             }
-        });
+        }
         
-        if (this.count == this.faits.size()) {
+        if (count == this.faits.size()) {
             res = true;
         }
 
-        this.count = 0;        //réinitialisation du compteur
         return res;
     }
 
+    /**
+     * @function isConclusionTrue
+     * @param base : classe BaseConnue, une base de faits
+     * @return vrai si la conclusion fait partie de la base de fait, faux sinon
+     * 
+     * Vérifie la présence de la conclusion dans la base de faits
+     */
+    public boolean isConclusionTrue (BaseConnue base) {
+        return (base.isTrueFait(this.conclusion));
+    }
 
-    //retourn le modèle d'affichage des règles
+
+    //retourne le modèle d'affichage des règles
     public String toString(){
         String resultat="";
          resultat="R" + this.id + ":\n";
             for (int i=0; i<this.faits.size()-1; ++i) {
               resultat+=faits.get(i).getFait();
-              if(faits.size()>1) //s'il y a plusieurs prémice
+              if(faits.size()>1) //s'il y a plusieurs prémices
                 resultat+=" Et ";
             }
           resultat+= " Alors "+ this.conclusion;
