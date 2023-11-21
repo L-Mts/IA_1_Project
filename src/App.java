@@ -21,10 +21,17 @@ public class App {
         Fait f6 = new Fait(6, "Est une pie");
 
 
+        ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
+            List.of(f1, f2, f3, f4, f5, f6)
+        );
+
+
         /* --- TOUTES LES REGLES --- */
         Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
-        Regle r3 = new Regle(3, new ArrayList(List.of(f1, f3, f2)), f6);
+        Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
+
+        // Utilisation de la classe BaseRegle pour créer une liste regroupant toutes les règles
 
 
         /* --- NOTRE BASE DE FAITS CONNUS --- */
@@ -50,6 +57,9 @@ public class App {
          *      Cette fois, regarder si la conclusion fait partie de la base de donnée --> si oui ajouter les hypothèses dans la base
          *      --> A adapter selon les différentes manière de faire la recherche (cf feuille Projet) 
          */
+
+
+         
         
     }
 }
