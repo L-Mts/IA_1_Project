@@ -60,7 +60,7 @@ public class Regle {
     //retourne le modèle d'affichage des règles
     public String toString(){
         String resultat="";
-         resultat="R" + this.id + ":\n";
+         resultat="R" + this.id + ":\tSi\t";
             for (int i=0; i<this.faits.size()-1; ++i) {
               resultat+=faits.get(i).getFait();
               if(faits.size()>1) //s'il y a plusieurs prémices
