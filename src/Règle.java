@@ -1,12 +1,3 @@
-/**
- * Classe Règle
- * 
- * Règle avec ses prédicats
- * 
- * @author: Loana MOTTAIS, Himidati BOINAIDI
- */
-
-
 import java.util.ArrayList;
 
 public class Règle {
@@ -26,9 +17,11 @@ public class Règle {
     /**
      * @function isTrue
      * @param BaseConnue base
-     * @return vrai si tous les prédicats font partie de la base de faits, faux sinon
+     * @return boolean (true / false)
      * 
-     * Parcours la liste des prédicats, vérifie leur présence dans la base de faits
+     * Parcours la liste des prédicats de la règle (ArrayList<Faits> faits)
+     * Pour chaque: vérifie sa présence dans la liste des faits de la base
+     * Si tous les prédicats sont dans la base 
      */
     public boolean isTrue (BaseConnue base) {
         boolean res = false;
@@ -42,7 +35,6 @@ public class Règle {
             res = true;
         }
 
-        this.count = 0;        //réinitialisation du compteur
         return res;
     }
 
