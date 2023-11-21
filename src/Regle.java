@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class Règle {
+public class Regle {
     
     public int id;
-    private ArrayList<Faits> faits;
-    private Faits conclusion;
+    private ArrayList<Fait> faits;
+    private Fait conclusion;
     private int count;
 
-    public Règle (int id, ArrayList<Faits> faits, Faits conclusion) {
+    public Regle (int id, ArrayList<Fait> faits, Fait conclusion) {
         this.id = id; 
         this.faits = faits;
         this.conclusion = conclusion;
@@ -42,10 +42,10 @@ public class Règle {
     //retourn le modèle d'affichage des règles
     public String toString(){
         String resultat="";
-         resultat="R" + this.id + ":\n";
+         resultat="R" + this.id + ":\tSi\t";
             for (int i=0; i<this.faits.size()-1; ++i) {
               resultat+=faits.get(i).getFait();
-              if(faits.size()>1) //s'il y a plusieurs prémice
+              if(faits.size()>1) //s'il y a plusieurs faits
                 resultat+=" Et ";
             }
           resultat+= " Alors "+ this.conclusion;

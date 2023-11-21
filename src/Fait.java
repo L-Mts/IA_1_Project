@@ -8,7 +8,7 @@
  */
 
 
-public class Faits {
+public class Fait {
 
     private int id;
     private String fait;
@@ -20,7 +20,7 @@ public class Faits {
      * 
      * Un fait ne pouvant jamais être créé en dehors du code, il n'est pas nécessaire de faire un id auto-incrémenté
      */
-    public Faits (int id, String fait) {
+    public Fait (int id, String fait) {
         this.id = id;
         this.fait = fait;
     }
