@@ -64,5 +64,15 @@ public class Regle {
     ArrayList<Fait> getListFaits () {
         return this.faits;
     }
+
+    public boolean estApplicable (BaseConnue baseConnue) {
+        if (this.isTrue(baseConnue) && this.isConclusionTrue(baseConnue) == false) {
+            return true;
+        }
+        return false;
+    }
   
+    public Fait getConclusion(){
+        return this.conclusion;
+    }
 }
