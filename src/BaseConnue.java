@@ -62,5 +62,9 @@ public class BaseConnue {
         return str;
     }
 
+    public int nbrFaits(){
+        return this.faits.size();
+    }
+
 
 }

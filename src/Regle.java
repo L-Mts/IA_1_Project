@@ -79,11 +79,20 @@ public class Regle {
         }
         return false;
     }
-  
+
     /**
      * @return la conclusion de la règle
      */
     public Fait getConclusion(){
         return this.conclusion;
+    }
+
+    /* renvoie la somme des Indices de la règle */
+    public int sommeIndices(BaseConnue baseConnue){
+        int som=0;
+        for(Fait f: this.faits){
+            som+=baseConnue.getFaits().indexOf(f);
+        }
+        return som;
     }
 }
