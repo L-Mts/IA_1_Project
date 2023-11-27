@@ -57,6 +57,10 @@ public class BaseConnue {
         return this.faits;
     }
 
+    public String toString() {
+        String str = this.faits.toString();
+        return str;
+    }
 
 
 }

@@ -33,4 +33,10 @@ public class Fait {
         return this.fait;
     }
 
+    public String toString() {
+        String str  = new String(); 
+        str = "ID : " + this.id + " - " + this.fait;
+        return str;
+    }
+
 }

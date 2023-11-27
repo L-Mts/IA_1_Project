@@ -61,10 +61,18 @@ public class Regle {
           return resultat;
     }
 
+    /**
+     * @return la liste des faits prédicats de la règle
+     */
     ArrayList<Fait> getListFaits () {
         return this.faits;
     }
 
+    /**
+     * 
+     * @param baseConnue
+     * @return true : si la règle est applicable = si tous ses faits prédicats sont dans la base connue ET que sa conclusion n'est pas encore dans la base connue
+     */
     public boolean estApplicable (BaseConnue baseConnue) {
         if (this.isTrue(baseConnue) && this.isConclusionTrue(baseConnue) == false) {
             return true;
@@ -72,6 +80,9 @@ public class Regle {
         return false;
     }
   
+    /**
+     * @return la conclusion de la règle
+     */
     public Fait getConclusion(){
         return this.conclusion;
     }

@@ -31,32 +31,32 @@ public class App {
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
 
-        // Utilisation de la classe BaseRegle pour créer une liste regroupant toutes les règles
+        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3)));
 
 
-        /* --- NOTRE BASE DE FAITS CONNUS --- */
+        /* --- TEST DE L'APPLICATION --- */
+
+        /* chainage avant */
+
         BaseConnue base = new BaseConnue();
         base.addFait(f1);
         base.addFait(f4);
 
-        /* --- TEST DE L'APPLICATION --- */
+        /* chainage arriere */
+
+        BaseConnue baseArriere = new BaseConnue();
+        baseArriere.addFait(f6);
+
+        ChainageArriere moteur = new ChainageArriere(baseArriere, baseRegle);
+
+        System.out.println("Avant chainage arrière, base : " + baseArriere.getFaits());
+
+        moteur.ChainageSimple();
+
+        System.out.println("Après chainage arrière, base : " + baseArriere.getFaits());
         
-        /*
-         * Comment faire pour tester les différentes règles ? 
-         * 
-         * Idée 1 (chaînage avant):
-         *      Avoir une liste de règle qui est parcourue entièrement à chaque test
-         *      Dès la première règle validée dont la conclusion n'est pas dans la base : 
-         *          ajout conclusion dans la base
-         *          + quitter fonction de parcours de la liste puis la relancer jusqu'à ce qu'on ne puisse plus ajouter de conclusion
-         *          = dernière conclusion ajoutée (dernier élément de la liste de faits de la base) == Conclusion finale
-         *      Adapter cette méthode pour les différentes manière de faire du chaînage avant (cf feuille Projet)
-         * 
-         * Idée 2 (chaînage arrière):
-         *      Liste de règle à parcourir entièrement
-         *      Cette fois, regarder si la conclusion fait partie de la base de donnée --> si oui ajouter les hypothèses dans la base
-         *      --> A adapter selon les différentes manière de faire la recherche (cf feuille Projet) 
-         */
+        
+        
 
 
          
