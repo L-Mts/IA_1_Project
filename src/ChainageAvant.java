@@ -28,9 +28,6 @@ public class ChainageAvant {
      * Je récupère toutes les règles applicables 
      * Pour chaque règle je compare les indices du fait, celle dont la somme des indices est le plus correspond au fait le plus récent
     */
-
-
-
     public void chainageDeux(){
         ArrayList<Regle> mesResglesApplicables=new ArrayList<Regle>();
         for(Regle r: this.baseRegle.getListRegle()){
