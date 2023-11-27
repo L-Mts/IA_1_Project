@@ -11,18 +11,42 @@ public class ChainageAvant {
 
     /* --- CONSTRUCTEUR --- */
     public ChainageAvant(BaseConnue base, BaseRegle baseRegles) {
-        // TODO Ecrire le constructeur
-        
+       this.baseConnue=base;
+       this.baseRegle=baseRegles;
     }
-
-
-    public void ChainageSimple () {
+    /*choix de la première règle applicable */
+    public void chainageSimple () {
         int i=0;
-        while (this.baseRegle.getListRegle().get(i).estApplicable(this.baseConnue) == false && i < this.baseRegle.getListRegle().size()) {
+        while (!this.baseRegle.getListRegle().get(i).estApplicable(this.baseConnue) && i < this.baseRegle.getListRegle().size()) {
             i++;
         }
         baseConnue.addFait(this.baseRegle.getListRegle().get(i).getConclusion());
     }
 
+    /* choix de la règle comportant comme prémices les faits déduits les plus récents  
+     * toutes les prémices de la règle doivent être récemment déduis
+     * Je récupère toutes les règles applicables 
+     * Pour chaque règle je compare les indices du fait, celle dont la somme des indices est le plus correspond au fait le plus récent
+    */
+
+
+
+    public void chainageDeux(){
+        ArrayList<Regle> mesResglesApplicables=new ArrayList<Regle>();
+        for(Regle r: this.baseRegle.getListRegle()){
+            if(r.estApplicable(baseConnue)){
+                mesResglesApplicables.add(r);
+            }
+        }
+        Regle regleLaPlusRecente= mesResglesApplicables.get(0);
+        int somme=regleLaPlusRecente.sommeIndices(baseConnue);
+        for(Regle r: mesResglesApplicables){
+            if(r.sommeIndices(baseConnue)>somme){
+                regleLaPlusRecente=r;
+                somme=r.sommeIndices(baseConnue);
+            }
+        }
+        baseConnue.addFait(regleLaPlusRecente.getConclusion());
+    }
     
 }
