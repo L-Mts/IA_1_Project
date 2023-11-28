@@ -23,6 +23,7 @@ public class App {
         Fait f8 = new Fait(8, "Vit en couple");
 
 
+
         /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
         ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
             List.of(f1, f2, f3, f4, f5, f6)
@@ -37,15 +38,16 @@ public class App {
         Regle r4 = new Regle(4, new ArrayList<Fait>(List.of(f7)), f5);
         Regle r5 = new Regle(5, new ArrayList<Fait>(List.of(f8, f7)), f5);
         Regle r6 = new Regle(6, new ArrayList<Fait>(List.of(f8)), f6);
+        Regle r7 = new Regle(7, new ArrayList<Fait>(List.of(f1,f3)), f4);
 
-        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3, r4, r5, r6)));
+        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3, r4, r5, r6, r7)));
 
 
         /* --- TEST DE L'APPLICATION --- */
 
         /* chainage avant */
 
-        BaseConnue base = new BaseConnue();
+       /* BaseConnue base = new BaseConnue();
         base.addFait(f1);
         base.addFait(f4);
 
@@ -72,6 +74,20 @@ public class App {
         moteur.chainagePlusRecursif();
         System.out.println("Après chainage arrière, base : " + baseArriere.getFaits());
         
-        System.out.println();
+        System.out.println(); */
+
+        BaseConnue baseAvant= new BaseConnue();
+
+        baseAvant.addFait(f1);
+        baseAvant.addFait(f2);
+        baseAvant.addFait(f3);
+        baseAvant.addFait(f4);
+
+        System.out.println(baseAvant.getFaits()+"\n");
+        ChainageAvant moteurChainageAvant=new ChainageAvant(baseAvant, baseRegle);
+        //moteurChainageAvant.chainageSimple();
+        moteurChainageAvant.chainageDeux();
+        System.out.println(baseAvant.getFaits()+"\n");
+        
     }
 }
