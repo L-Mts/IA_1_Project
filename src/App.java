@@ -21,8 +21,8 @@ public class App {
         Fait f6 = new Fait(6, "Est une pie");
         Fait f7 = new Fait(7, "Vit en groupe");
         Fait f8 = new Fait(8, "Vit en couple");
-
-
+        Fait f9= new Fait(9, "est un Manchot");
+        Fait f10= new Fait(10, "sont de la même famille");
 
         /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
         ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
@@ -35,12 +35,18 @@ public class App {
         Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
+        Regle r11=new Regle(3, new ArrayList<Fait>(List.of(f9, f10)), f7); //règle qui n'a pas de sens, mais juste pour le test
         Regle r4 = new Regle(4, new ArrayList<Fait>(List.of(f7)), f5);
         Regle r5 = new Regle(5, new ArrayList<Fait>(List.of(f8, f7)), f5);
         Regle r6 = new Regle(6, new ArrayList<Fait>(List.of(f8)), f6);
         Regle r7 = new Regle(7, new ArrayList<Fait>(List.of(f1,f3)), f4);
+        Regle r8= new Regle(8, new ArrayList<Fait>(List.of(f1,f3)), f9);
+        Regle r9= new Regle(9, new ArrayList<Fait>(List.of(f5, f9)), f10); 
 
-        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3, r4, r5, r6, r7)));
+        //règle qui n'a pas de sens mais c'est juste pour tester
+        Regle r10=new Regle(10, new ArrayList<Fait>(List.of(f6, f9)), f8);
+
+        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3,r11, r4, r5, r6, r7, r8, r9, r10)));
 
 
         /* --- TEST DE L'APPLICATION --- */
@@ -85,8 +91,10 @@ public class App {
 
         System.out.println(baseAvant.getFaits()+"\n");
         ChainageAvant moteurChainageAvant=new ChainageAvant(baseAvant, baseRegle);
-        //moteurChainageAvant.chainageSimple();
-        moteurChainageAvant.chainageDeux();
+       /* moteurChainageAvant.chainageSimple(); /*ok */
+        moteurChainageAvant.appliqueRegleRecentRecursive();
+    
+        /*moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
         System.out.println(baseAvant.getFaits()+"\n");
         
     }
