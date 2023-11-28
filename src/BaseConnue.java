@@ -61,11 +61,6 @@ public class BaseConnue {
         return this.faits;
     }
 
-    public String toString() {
-        String str = this.faits.toString();
-        return str;
-    }
-
     public int nbrFaits(){
         return this.faits.size();
     }
