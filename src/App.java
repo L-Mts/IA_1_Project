@@ -19,6 +19,8 @@ public class App {
         Fait f4 = new Fait(4, "Ne peut pas voler");
         Fait f5 = new Fait(5, "Est un pingouin");
         Fait f6 = new Fait(6, "Est une pie");
+        Fait f7 = new Fait(7, "Vit en groupe");
+        Fait f8 = new Fait(8, "Vit en couple");
 
 
         /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
@@ -32,8 +34,11 @@ public class App {
         Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
+        Regle r4 = new Regle(4, new ArrayList<Fait>(List.of(f7)), f5);
+        Regle r5 = new Regle(5, new ArrayList<Fait>(List.of(f8, f7)), f5);
+        Regle r6 = new Regle(6, new ArrayList<Fait>(List.of(f8)), f6);
 
-        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3)));
+        BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3, r4, r5, r6)));
 
 
         /* --- TEST DE L'APPLICATION --- */
