@@ -59,7 +59,6 @@ public class ChainageArriere {
                 }
             }
         }
-
         //si on a trouvé une règle & ses prémisses à mettre dans la base sont plus que le max initialisé
         if (regle != null && max > 0) {
             System.out.println("Regle n°" + regle.id);
@@ -76,9 +75,21 @@ public class ChainageArriere {
      * Appel récursif de la fonction ChainagePlus jusqu'à ce qu'on ne trouve plus aucune prémisses à ajouter dans la base connue
      */
     public void chainagePlusRecursif () {
-        boolean cont = this.chainagePlus();
-        while (cont != false) {
-            cont = this.chainagePlus();
+        boolean continuer = this.chainagePlus();
+        while (continuer != false) {
+            continuer = this.chainagePlus();
+        }
+    }
+
+    public boolean chainageRecent () {
+
+        return false;
+    }
+
+    public void chainageRecentRecursif () {
+        boolean continuer = this.chainageRecent();
+        while (continuer != false) {
+            continuer = this.chainageRecent();
         }
     }
 
