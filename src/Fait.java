@@ -39,4 +39,22 @@ public class Fait {
         return str;
     }
 
+    public boolean isAConclusion (BaseRegle allRegles) {
+        for (Regle r : allRegles.getListRegle()) {
+            if (r.getConclusion().equals(this)) return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param allRegles : une base de Regle
+     * @return id de la règle dont le fait est la conclusion ou -1 si le fait n'est conclusion d'aucune règle
+     */
+    public int isConclusionOf (BaseRegle allRegles) {
+        for (Regle r : allRegles.getListRegle()) {
+            if (r.getConclusion().equals(this)) return r.id;
+        }
+        return -1;
+    }
+
 }

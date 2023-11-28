@@ -35,6 +35,10 @@ public class BaseConnue {
         return (this.faits.remove(f));
     }
 
+    public void removeAllFaits () {
+        this.faits.clear();
+    }
+
     
     /**
      * @function isTrueFait

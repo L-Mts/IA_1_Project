@@ -21,9 +21,11 @@ public class App {
         Fait f6 = new Fait(6, "Est une pie");
 
 
+        /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
         ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
             List.of(f1, f2, f3, f4, f5, f6)
         );
+        */
 
 
         /* --- TOUTES LES REGLES --- */
@@ -42,24 +44,29 @@ public class App {
         base.addFait(f1);
         base.addFait(f4);
 
-        /* chainage arriere */
+        System.out.println();
+        System.out.println(" ### CHAINAGE ARRIERE ###");
 
         BaseConnue baseArriere = new BaseConnue();
         baseArriere.addFait(f6);
 
         ChainageArriere moteur = new ChainageArriere(baseArriere, baseRegle);
 
+        System.out.println();
+        System.out.println(" --- CHAINAGE SIMPLE --- ");
+
         System.out.println("Avant chainage arrière, base : " + baseArriere.getFaits());
+        moteur.chainageSimple();
+        System.out.println("Après chainage arrière, base : " + baseArriere.getFaits());
 
-        moteur.ChainageSimple();
-
+        System.out.println();
+        System.out.println(" --- CHAINAGE PLUS --- ");
+        baseArriere.removeAllFaits();
+        baseArriere.addFait(f6);
+        System.out.println("Avant chainage arrière, base : " + baseArriere.getFaits());
+        moteur.chainagePlusRecursif();
         System.out.println("Après chainage arrière, base : " + baseArriere.getFaits());
         
-        
-        
-
-
-         
-        
+        System.out.println();
     }
 }
