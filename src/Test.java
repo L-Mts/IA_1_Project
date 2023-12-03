@@ -9,11 +9,11 @@ import java.util.List;
  * @author: Loana MOTTAIS, Himidati BOINAIDI
  */
 
-public class App {
+public class Test {
     public static void main(String[] args) throws Exception {
        
         /* --- TOUS LES FAITS --- */
-        Fait f1 = new Fait(1, "Est un oiseau");
+       /*Fait f1 = new Fait(1, "Est un oiseau");
         Fait f2 = new Fait(2, "Peut voler");
         Fait f3 = new Fait(3, "Est noir et blanc");
         Fait f4 = new Fait(4, "Ne peut pas voler");
@@ -32,7 +32,7 @@ public class App {
 
 
         /* --- TOUTES LES REGLES --- */
-        Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
+       /* Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
         Regle r11=new Regle(3, new ArrayList<Fait>(List.of(f9, f10)), f7); //règle qui n'a pas de sens, mais juste pour le test
@@ -82,7 +82,7 @@ public class App {
         
         System.out.println(); */
 
-        BaseConnue baseAvant= new BaseConnue();
+        /*BaseConnue baseAvant= new BaseConnue();
 
         baseAvant.addFait(f1);
         baseAvant.addFait(f2);
@@ -91,11 +91,17 @@ public class App {
 
         System.out.println(baseAvant.getFaits()+"\n");
         ChainageAvant moteurChainageAvant=new ChainageAvant(baseAvant, baseRegle);
-       /* moteurChainageAvant.chainageSimple(); /*ok */
+        System.out.println("n'importe quel règle applicable \n");
+        moteurChainageAvant.chainageSimple(); /*ok */
+       /* System.out.println(baseAvant.getFaits()+"\n");
+        System.out.println("le plus récent\n");
         moteurChainageAvant.appliqueRegleRecentRecursive();
-    
-        /*moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
         System.out.println(baseAvant.getFaits()+"\n");
+        System.out.println("avec le plus de prémices\n");
+        moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
+        /*System.out.println(baseAvant.getFaits()+"\n");*/
         
+
+        Gui view=new Gui();
     }
 }
