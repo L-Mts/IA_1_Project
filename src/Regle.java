@@ -87,7 +87,7 @@ public class Regle {
         return this.conclusion;
     }
 
-    /* renvoie la somme des Indices de la règle */
+    /* renvoie la somme des Indices des prémices de la règle */
     public int sommeIndices(BaseConnue baseConnue){
         int som=0;
         for(Fait f: this.faits){
