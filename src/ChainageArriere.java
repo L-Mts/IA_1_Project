@@ -82,7 +82,27 @@ public class ChainageArriere {
     }
 
     public boolean chainageRecent () {
+        int recent = -1;
+        Regle regle = null;
+        for (Regle r : this.baseRegle.getListRegle()) {
+            for (Fait f: this.baseConnue.getFaits()) {
+                // SI : le fait est égal à la conclusion && la conclusion fait partie de la base de connaissance && les prémisses ne sont pas dans la base connue && la position du fait est plus grande
+                if (r.getConclusion().equals(f) && r.isConclusionTrue(baseConnue) && !r.isTrue(baseConnue) && this.baseConnue.getFaits().indexOf(f) > recent) {
+                    recent = this.baseConnue.getFaits().indexOf(f);
+                    regle = r;
+                }
+            }
+        }
 
+        //si on a trouvé une règle && sa conclusion est la plus récente
+        if (regle != null && recent > -1) {
+            System.out.println("Regle n°" + regle.id);
+            for (Fait f : regle.getListFaits()) {
+                this.baseConnue.addFait(f);
+            }
+            return true;
+        }
+        
         return false;
     }
 
