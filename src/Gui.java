@@ -19,7 +19,7 @@ public class Gui extends JFrame{
     private String strategieChoisie;
     private BaseRegle mesRegles;
     private BaseConnue baseConnue=new BaseConnue();
-    private ArrayList<Fait> maBaseConnaissance;
+    private ArrayList<Fait> maBaseConnaissance=new ArrayList<Fait>();
 
     public Gui(){
         super("Système Expert");
@@ -40,7 +40,6 @@ public class Gui extends JFrame{
         JPanel panelResultat=new JPanel();
         JLabel resultatChainage=new JLabel();
 
-        panelResultat.add(resultatChainage);
 
         factsTextArea.setLineWrap(true);
         ruleTextArea.setLineWrap(true);
@@ -90,7 +89,6 @@ public class Gui extends JFrame{
                 switch (strategieChoisie) {
                     case "Chainage avant Simple":
                         /*String tousLesFaits=factsTextArea.getText();
-                        String tousLesregles=ruleTextArea.getText();
                         String faitsconnue=baseConnaissanceTextArea.getText();
 
                         String[] lignes = faitsconnue.split("\\n");
@@ -99,7 +97,6 @@ public class Gui extends JFrame{
                             Fait fait=new Fait(i++, ligne);
                             maBaseConnaissance.add(fait);
                         }*/
-                        //resultatChainage.setText("cliqué"); //pour afficher le résultat dans le panel
                         
                         System.out.println("s1");
                         break;
@@ -120,6 +117,9 @@ public class Gui extends JFrame{
                 }
             }
         });
+
+
+        panelResultat.add(resultatChainage);
 
         panelBas.add(choisirStratLabel);
         panelBas.add(typeChainage);

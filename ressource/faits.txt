@@ -1,0 +1,10 @@
+Est un oiseau
+Peut voler
+Est noir et blanc
+Ne peut pas voler
+Est un pingouin
+Est une pie
+Vit en groupe
+Vit en couple
+Est un Manchot
+Sont de la même famille

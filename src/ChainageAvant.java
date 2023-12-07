@@ -35,7 +35,7 @@ public class ChainageAvant {
      * Pour chaque règle je compare les indices du fait, celle dont la somme des indices est la plus grande, 
      * correspond à celle ayant les faits les plus récents
     */
-    public void appliqueRegleRecentRecursive() {
+    public void appliqueRegleRecent() {
         boolean regleAppliquee = true; //pour être sûr que la boucle est exécuté au moins une fois même si aucune règle n'est applicable ou que la base de fait est nulle
     
         while (regleAppliquee) {

@@ -13,7 +13,7 @@ public class Test {
     public static void main(String[] args) throws Exception {
        
         /* --- TOUS LES FAITS --- */
-        /*
+        
         Fait f1 = new Fait(1, "Est un oiseau");
         Fait f2 = new Fait(2, "Peut voler");
         Fait f3 = new Fait(3, "Est noir et blanc");
@@ -24,7 +24,7 @@ public class Test {
         Fait f8 = new Fait(8, "Vit en couple");
         Fait f9= new Fait(9, "est un Manchot");
         Fait f10= new Fait(10, "sont de la même famille");
-        */
+        
 
         /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
         ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
@@ -34,7 +34,7 @@ public class Test {
 
 
         /* --- TOUTES LES REGLES --- */
-        /*
+        
         Regle r1 = new Regle(1, new ArrayList<Fait>(List.of(f1)), f3);
         Regle r2 = new Regle(2, new ArrayList<Fait>(List.of(f1, f3, f4)), f5);
         Regle r3 = new Regle(3, new ArrayList<Fait>(List.of(f1, f3, f2)), f6);
@@ -50,7 +50,7 @@ public class Test {
         Regle r10=new Regle(10, new ArrayList<Fait>(List.of(f6, f9)), f8);
 
         BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3,r11, r4, r5, r6, r7, r8, r9, r10)));
-        */
+    
 
         /* --- TEST DE L'APPLICATION --- */
 
@@ -110,13 +110,18 @@ public class Test {
         moteurChainageAvant.chainageSimple(); /*ok */
        /* System.out.println(baseAvant.getFaits()+"\n");
         System.out.println("le plus récent\n");
-        moteurChainageAvant.appliqueRegleRecentRecursive();
+        moteurChainageAvant.appliqueRegleRecent();
         System.out.println(baseAvant.getFaits()+"\n");
         System.out.println("avec le plus de prémices\n");
         moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
         /*System.out.println(baseAvant.getFaits()+"\n");*/
         
 
-        Gui view=new Gui();
+        //Gui view=new Gui();
+        ReadFile readfile=new ReadFile("ressource/faits.txt");
+        readfile.lireRegle("ressource/regles.txt");
+
+        //System.out.println(readfile.getBasefaits());
+        System.out.println(readfile.getBaseregle());
     }
 }

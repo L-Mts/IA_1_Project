@@ -1,0 +1,5 @@
+Est noir et blanc;Est un oiseau
+Est un pingouin;Est un oiseau,Est noir et blanc,Ne peut pas voler
+Est un pingouin;Vit en groupe
+Est une pie;Vit en couple
+Sont de la même famille;Est un pingouin,Est un Manchot
