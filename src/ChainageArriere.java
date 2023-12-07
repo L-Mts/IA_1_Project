@@ -30,6 +30,7 @@ public class ChainageArriere {
                 //ajouter les faits à la base
                 for (Fait f : this.baseRegle.getListRegle().get(i).getListFaits()) {
                     baseConnue.addFait(f);
+                    
                 }
                 //revenir à la première règle de baseRegle
                 i = 0;
