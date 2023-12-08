@@ -1,5 +1,27 @@
-Est noir et blanc;Est un oiseau
-Est un pingouin;Est un oiseau,Est noir et blanc,Ne peut pas voler
-Est un pingouin;Vit en groupe
-Est une pie;Vit en couple
-Sont de la même famille;Est un pingouin,Est un Manchot
+Est un pingouin;Est noir et blanc,Peut voler,Est grand
+Est une pie;Est noir et blanc,Peut voler
+Est un manchot;Est noir et blanc,Ne peut pas voler
+Vit en groupe;Est un manchot
+Vit en couple;Est une pie
+Sont de la même famille;Est un manchot,Est un pingouin
+Sont de la même famille;Est un aigle,Est un faucon
+Est un ménure;Est noir,Sait imiter
+Est un perroquet amazone;Est multicolore,Sait imiter,Est exotique
+Est une chouette blanche;Est un oiseau de proie,Est blanc
+Est un aigle;Est un oiseau de proie,Est grand
+Est un faucon;Est un oiseau de proie,Est petit
+Est un oiseau de proie;Est carnivore
+Est une pie;Est carnivore,Est noir et blanc
+Est un merle noir;Est noir,Est petit
+Est un paon;Est multicolore,Est grand
+Est un colibri;Est exotique,Est petit
+Est exotique;Bec long et pointu,Est multicolore
+Est un huppe fasciée;Est exotique,Est grand
+Est un diamant mandarin;Est exotique,Est blanc
+Est un diamant mandarin;Est exotique,Bec court et pointu
+Est un pingouin;Est noir et blanc,Est sympathique
+Est sympathique;Vit en groupe,Peut voler
+Est sympathique;Sait imiter,Est exotique
+Bec court et pointu;Est petit,Peut voler
+Est une pie;Bec court et pointu,Est noir et blanc,Peut voler
+Est un merle noir;Bec court et pointu,Peut voler

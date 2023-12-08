@@ -5,28 +5,30 @@ Est un pingouin
 Est une pie
 Vit en groupe
 Vit en couple
-Est un Manchot
+Est un manchot
 Sont de la même famille
-Est un Oiseau de proie
+Est un oiseau de proie
 Bec de pêcheur
-Bec de carnivore
-Bec long et pointu d'insectivore
-Bec court et pointu d'insectivore
+Est carnivore
+Bec long et pointu
+Bec court et pointu
 Est noir
 Est blanc
-Est rose
-Est roux
 Est rouge
 Est marron
 Est multicolore
-Est vert
-Merle noir
-moineau domestique
-Est perroquet Amazone
-Sait Imiter
-Est un Aigle
+Est un merle noir
+Est un ménure
+Est un perroquet amazone
+Sait imiter
+Est un aigle
 Est une chouette blanche
 Est un faucon
-Scarlet macaw
 Est grand
 Est petit
+Est un paon
+Est un colibri
+Est exotique
+Est un huppe fasciée
+Est un diamant mandarin
+Est sympathique

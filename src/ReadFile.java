@@ -50,6 +50,7 @@ public class ReadFile {
             while ((line = br.readLine()) != null) { //sous forme c1;f1,f2
                 String[] regle=line.split(";");
                 String conclu=regle[0];
+                System.out.println(conclu);
                 int k=0;
                 int idConclu=-1;
                 //si la conclusion existe dans ma base de fait
