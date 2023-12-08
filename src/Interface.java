@@ -1,3 +1,11 @@
+/**
+ * Classe Interface
+ * 
+ * <p> Interface de l'application </p>
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -156,7 +164,7 @@ public class Interface {
             }
         });
 
-        JButton chainageAvtPlusBtn = new JButton("Chainage Avant Plus de Prémices");
+        JButton chainageAvtPlusBtn = new JButton("Chainage Avant Plus de Prémisses");
         chainageAvtPlusBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -195,7 +203,7 @@ public class Interface {
             }
         });
 
-        JButton chainageArrierePlusBtn = new JButton("Chainage Arrière Plus de Prémices");
+        JButton chainageArrierePlusBtn = new JButton("Chainage Arrière Plus de Prémisses");
         chainageArrierePlusBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {

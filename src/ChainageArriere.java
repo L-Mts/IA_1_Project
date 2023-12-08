@@ -1,24 +1,31 @@
-public class ChainageArriere {
+/**
+ * Classe ChainageArriere
+ * 
+ * Moteur d'inférence en chainage arrière
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
 
-    /* Va-t-on utiliser cette classe ?? */
-    
-    /* Une base de fait + une base de règle + une base connue + les méthodes pour faire le chainage avant */
+public class ChainageArriere {
 
     BaseConnue baseConnue;
     BaseRegle baseRegle;
 
-    /* --- CONSTRUCTEUR --- */
+    /**
+     * <h4> Constructeur </h4>
+     * @param base : une base de connaissances
+     * @param baseRegles : une base de règles
+     */
     public ChainageArriere(BaseConnue base, BaseRegle baseRegles) {
         this.baseConnue = base;
-        this. baseRegle = baseRegles;
-        
+        this. baseRegle = baseRegles; 
     }
 
 
     /**
-     * Pour une règle & une base connues (attributs de la classe chainage arriere): 
-     * Vérifie que la conclusion de la règle fait partie de la base connue
-     * Ajoute les faits prédicats de la règle à la base connue
+     * <p> Pour une règle & une base connues (attributs de la classe chainage arriere): </p>
+     * <p> Vérifie que la conclusion de la règle fait partie de la base connue </p>
+     * <p> Ajoute les faits prédicats de la règle à la base connue </p>
      * Continue jusqu'à ce que plus aucune règle ne soit applicable à la base --> derniers faits ajoutés = faits de bases recherchés
      */
     public void chainageSimple () {
@@ -42,11 +49,9 @@ public class ChainageArriere {
     }
 
     /**
-     * @function ChainagePlus()
-     * Pour une règle et une base connues (attributs de la classe ChainageArriere) : <br/>
-     * Vérifie quelle conclusion de la base connue a le + de prémisses
-     * Ajoute ces prémisses à la base connue
-     * Continue jusqu'à ce que plus aucune règle de la base de règle ne soit applicable
+     * <p> Pour une règle et une base connues (attributs de la classe ChainageArriere) : </p>
+     * <p> Vérifie quelle conclusion de la base connue a le + de prémisses </p>
+     * <p> Ajoute ces prémisses à la base connue </p>
      */
     public boolean chainagePlus () {
         int max = 0;
@@ -81,6 +86,12 @@ public class ChainageArriere {
         }
     }
 
+    /**
+     * <p> Pour une règle et une base connues (attributs de la classe ChainageArriere) : </p>
+     * <p> Vérifie quelle conclusion de la base de règle a été le plus récement incluse dans la base connue </p>
+     * Ajoute ses prémisses à la base connue
+     * @return vrai si il y a une règle à appliquer, faux sinon
+     */
     public boolean chainageRecent () {
         int recent = -1;
         Regle regle = null;
@@ -105,6 +116,9 @@ public class ChainageArriere {
         return false;
     }
 
+    /**
+     * Appel de chainageRecent jusqu'à ce qu'il n'y ait plus aucune règle applicable
+     */
     public void chainageRecentRecursif () {
         boolean continuer = this.chainageRecent();
         while (continuer != false) {

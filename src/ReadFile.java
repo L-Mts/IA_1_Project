@@ -1,3 +1,11 @@
+/**
+ * Classe ReadFile
+ * 
+ * <p> Permet de lire les fichier .txt pour créer la base de faits et la base de règles </p>
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,8 +17,9 @@ public class ReadFile {
     ArrayList<Fait> baseFaits=new ArrayList<Fait>();
     ArrayList<Regle> baseRegles= new ArrayList<Regle>();
 
-    /*
-     *lit un fichier de fait
+    /**
+     * <p> Lecture d'un fichier de fait </p>
+     * <p> Création d'une base de faits </p>
      */
     public ReadFile(String nomfichier) throws Exception {
         try {
@@ -37,8 +46,8 @@ public class ReadFile {
         return this.baseFaits;
     }
 
-    /*
-     * méthode qui lit un fichier txt de Règle 
+    /**
+     * <p> Lecture d'un fichier de règles </p> 
      */
     public void lireRegle(String nomfichier) throws Exception{
         try {
@@ -93,6 +102,9 @@ public class ReadFile {
         this.baseFaits=faits;
     }
 
+    /**
+     * @return la liste des règles
+     */
     public ArrayList<Regle> getBaseregle(){
         return this.baseRegles;
     }

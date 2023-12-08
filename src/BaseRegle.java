@@ -1,3 +1,11 @@
+/**
+ * Classe BaseRegle
+ * 
+ * Base de toutes les règles du domaine
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
+
 import java.util.ArrayList;
 
 public class BaseRegle {
@@ -5,28 +13,41 @@ public class BaseRegle {
     private ArrayList<Regle> listRegles;
 
 
+    /**
+     * <h4> Constructeur </h4>
+     * @param list : liste des règles
+     */
     public BaseRegle(ArrayList<Regle> list){
         this.listRegles=list;
     }
 
+    /**
+     * @return la liste de toutes les règles
+     */
     public ArrayList<Regle> getListRegle(){
         return this.listRegles;
     }
 
+    /**
+     * Affiche la liste des règles dans le terminal
+     */
     public void afficher(){
         for(Regle regle: listRegles){
             System.out.println(regle.toString());
         }
     }
 
+    /**
+     * @param r : la règle à ajouter à la base de règles
+     */
     public void addRegle(Regle r){
         this.listRegles.add(r);
     }
 
-    public ArrayList<Regle> getListRegles(){
-        return this.listRegles;
-    }
-
+    /**
+     * @param id : l'id de la règle à trouver
+     * @return la règle souhaitée
+     */
     public Regle getRegleByID (int id) {
         for (int i=0; i<this.listRegles.size(); i++) {
             if (this.listRegles.get(i).id == id)
@@ -35,9 +56,11 @@ public class BaseRegle {
         return null;
     }
 
-    /*
-     * retourne vraie si la liste des règles présente au moins une incohérence
-     * cad s'il des règles avec les mêmes prémices mais pas la même conclusion
+    /**
+     * @return vrai si la liste des règles présente au moins une incohérence
+     * </br>
+     * <p> Incohérence = redondance de règle ou incompatibilité des règles </p>
+     * <p> Respectivement: on la même conclusion, et on les mêmes prémisses mais des conclusions différentes </p>
     */
     public boolean incompatibilite() {
         for (Regle r1 : this.listRegles) {
@@ -50,6 +73,9 @@ public class BaseRegle {
         return false;
     }
 
+    /**
+     * Supprime les règles (en partant de la dernière ajoutée) à la base qui causent une incohérence
+     */
     public void correctionIncompatibilite() {
         boolean isIncompatible = this.incompatibilite();
         while (isIncompatible == true) {

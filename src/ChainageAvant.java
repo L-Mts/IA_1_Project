@@ -1,21 +1,32 @@
+/**
+ * Classe ChainageAvant
+ * 
+ * Moteur d'inférence en chainage avant
+ * 
+ * @author: Loana MOTTAIS, Himidati BOINAIDI
+ */
+
+
 import java.util.ArrayList;
 
 public class ChainageAvant {
 
-    /* Va-t-on utiliser cette classe ?? */
-    
-    /* Une base de fait + une base de règle + une base connue + les méthodes pour faire le chainage avant */
-
     BaseConnue baseConnue;
     BaseRegle baseRegle;
 
-    /* --- CONSTRUCTEUR --- */
+    /**
+     * <h4> Constructeur </h4>
+     * @param base : une base de connaissances
+     * @param baseRegles : une base de règles
+     */
     public ChainageAvant(BaseConnue base, BaseRegle baseRegles) {
        this.baseConnue=base;
        this.baseRegle=baseRegles;
     }
 
-    /*choix de la première règle applicable */
+    /**
+     * Choisit la première règle applicable et ajoute sa conclusion à la base de connaissances
+     */
     public void chainageSimple () {
         int i=0;
         while (i < this.baseRegle.getListRegle().size()) {
@@ -30,10 +41,9 @@ public class ChainageAvant {
 
     }
 
-    /* choix de la règle comportant comme prémices les faits déduits les plus récents  
-     * toutes les prémices de la règle doivent être récemment déduis
-     * Pour chaque règle je compare les indices du fait, celle dont la somme des indices est la plus grande, 
-     * correspond à celle ayant les faits les plus récents
+    /**
+     * <p> Choix de la règle comportant comme prémisses les faits déduits les plus récents  </p>
+     * Pour chaque règle compare les indices des faits, celle dont la somme des indices est la plus grande correspond à celle ayant les faits les plus récents
     */
     public void appliqueRegleRecent() {
         boolean regleAppliquee = true; //pour être sûr que la boucle est exécuté au moins une fois même si aucune règle n'est applicable ou que la base de fait est nulle
@@ -68,7 +78,11 @@ public class ChainageAvant {
     }
 
 
-    /* choix de la règle avec le plus de prémices */
+    /**
+     * <p> Choisit la règle ayant le plus de prémisses à satisfaire </p>
+     * <p> Ajoute sa conclusion à la base connue </p>
+     * @return vrai si trouve une règle à appliquer, faux sinon
+     */
     public boolean chainagePlusPremices(){
         int nbFait=0;
         Regle rule=null;
@@ -86,6 +100,9 @@ public class ChainageAvant {
         return false;
     }
 
+    /**
+     * <p> Appel de chainagePlusPremices jusqu'à ce qu'il n'y ait plus aucune règle à appliquer </p>
+     */
     public void chainagePlusPremicesRecursive(){
         boolean res = chainagePlusPremices();
         

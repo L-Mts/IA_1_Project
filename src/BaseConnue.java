@@ -14,7 +14,7 @@ public class BaseConnue {
     private ArrayList<Fait> faits;
 
     /**
-     * @function Constructeur BaseConnue
+     * <h4> Constructeur </h4>
      * Création d'une base avec une liste vide
      */
     public BaseConnue () {
@@ -23,7 +23,6 @@ public class BaseConnue {
 
 
     /**
-     * @function addFait: ajout d'un fait à la base de fait
      * @param f : le fait à ajouter
      * @return : vrai si réussite, faux sinon
      */
@@ -32,36 +31,47 @@ public class BaseConnue {
         return this.faits.add(f);
     }
 
+    /**
+     * @param f : le fait à supprimer
+     * @return : vrai si réussite, faux sinon
+     */
     public boolean removeFait (Fait f) {
         return (this.faits.remove(f));
     }
 
+    /**
+     * Supprime tous les faits de la base connue
+     */
     public void removeAllFaits () {
         this.faits.clear();
     }
 
     
     /**
-     * @function isTrueFait
-     * @param f : un fait
-     * @return : vrai si le fait est présent dans la base de faits, faux si le fait n'est pas présent dans la base de faits
+     * @param f : un fait à vérifier
+     * @return : vrai si le fait est présent dans la base connue, faux si le fait n'est pas présent dans la base connue
      */
     public boolean isTrueFait (Fait f) {
         return this.faits.contains(f);
     }
 
     /**
-     * @function isEmpty
      * @return : vrai si la liste des faits de la base connue est vide, faux sinon
      */
     public boolean isEmpty ()  {
         return (this.faits.isEmpty());
     }
 
+    /**
+     * @return la liste des faits de la base connue
+     */
     public ArrayList<Fait> getFaits (){
         return this.faits;
     }
 
+    /**
+     * @return le nombre de faits dans la base connue
+     */
     public int nbrFaits(){
         return this.faits.size();
     }
