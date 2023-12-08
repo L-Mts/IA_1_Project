@@ -50,22 +50,8 @@ public class BaseRegle {
         return false;
     }
 
-    public boolean bouclageRegle(){
-        for (Regle r1 : this.listRegles) {
-            for (Regle r2 : this.listRegles) {
-                for(Regle r3: this.listRegles){
-                    return true;
-                }
-            
-            }
-        }
-        return false;
-
-    }
-
     public void correctionIncompatibilite() {
         boolean isIncompatible = this.incompatibilite();
-        
         while (isIncompatible == true) {
             Regle toDelete;
             Regle r1;
