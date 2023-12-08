@@ -28,6 +28,7 @@ public class BaseConnue {
      * @return : vrai si réussite, faux sinon
      */
     public boolean addFait (Fait f) {
+        if (this.faits.contains(f)) return false;
         return this.faits.add(f);
     }
 

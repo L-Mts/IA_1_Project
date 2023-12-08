@@ -35,7 +35,7 @@ public class Fait {
 
     public String toString() {
         String str  = new String(); 
-        str = "ID : " + this.id + " - " + this.fait;
+        str = "f" + this.id + " : " + this.fait;
         return str;
     }
 

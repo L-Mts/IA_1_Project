@@ -51,13 +51,19 @@ public class Regle {
     //retourne le modèle d'affichage des règles
     public String toString(){
         String resultat="";
-         resultat="R" + this.id + ": Si ";
+         resultat="R" + this.id + " - ";
+         for (int i=0; i<this.faits.size(); ++i) {
+              resultat+= "f"+faits.get(i).getId();
+              if(i<faits.size()-1) //s'il y a plusieurs prémice
+                resultat+=" + ";
+            }
+          resultat+= " = f"+ this.conclusion.getId()+" ---> SI ";
             for (int i=0; i<this.faits.size(); ++i) {
               resultat+=faits.get(i).getFait();
               if(i<faits.size()-1) //s'il y a plusieurs prémice
-                resultat+=" Et ";
+                resultat+=" ET ";
             }
-          resultat+= " Alors "+ this.conclusion.getFait()+"\n";
+          resultat+= " ALORS "+ this.conclusion.getFait()+"\n";
           return resultat;
     }
 

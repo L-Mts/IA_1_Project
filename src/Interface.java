@@ -12,15 +12,15 @@ public class Interface {
     private ArrayList<Fait> allFaits;
 
     public Interface (BaseRegle allRegles, ArrayList<Fait> allFaits) {
+        
+        //initialisation des bases
         this.allRegles = allRegles;
         this.allFaits = allFaits;
-
         this.baseConnue = new BaseConnue();
 
-
+        //creation de la JFrame principale
         JFrame principale = new JFrame("Systeme Expert IA 1 - Himidati & Loana");
         principale.setSize(1600, 800);
-        
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Point centerPoint = ge.getCenterPoint();
         Dimension windowSize = principale.getSize();
@@ -30,28 +30,68 @@ public class Interface {
 
         principale.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //panelTop = affichage (sur 2 lignes)
-        JPanel panelTop = new JPanel(new GridLayout(2, 1));
-        //panelMain = affichages des bases (sur 2 colonnes)
-        JPanel panelMain = new JPanel (new GridLayout(1, 2));
+        //panelBases = affichage (sur 2 lignes des différentes bases (de faits, de règles, de connaissances)
+        JPanel panelBases = new JPanel(new GridLayout(2, 1));
+        //panelBasesDeDepart = affichages des bases de départ = base de fait & base de regles (sur 2 colonnes)
+        JPanel panelBasesDeDepart = new JPanel (new GridLayout(1, 2));
         
+        //affichage de la base de faits
         JList allFaitsList = new JList<>(this.allFaits.toArray());
         JScrollPane scrollPanel = new JScrollPane(allFaitsList);
         scrollPanel.setBorder(BorderFactory.createTitledBorder(null, "BASE DE FAITS", 2, 3));
 
-        JList allReglesList = new JList<>(this.allRegles.getListRegle().toArray());
+        //affichage de la base de règles
+        JPanel panelReglesEtBoutons = new JPanel();
+        DefaultListModel<String> modelRegles = new DefaultListModel<>();
+        JList allReglesList = new JList<>(modelRegles);
+        for (Regle r : allRegles.getListRegle()) {
+            modelRegles.addElement(r.toString());
+        }
         JScrollPane scrollPanelRegles = new JScrollPane(allReglesList);
         scrollPanelRegles.setBorder(BorderFactory.createTitledBorder(null, "BASE DE REGLES", 2, 3));
+        panelReglesEtBoutons.add(scrollPanelRegles, BorderLayout.SOUTH);
 
+        //boutons en rapport avec la base de règles
+        JPanel boutonsReglesPanel = new JPanel();
+        JButton checkIncompatibilite = new JButton("Vérifier la cohérence");
+        checkIncompatibilite.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                if (allRegles.incompatibilite()) {
+                    JOptionPane.showMessageDialog(null, "ATTENTION : il y a des incohérences dans votre base de règles");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nous n'avons pas détecté d'incohérences dans votre base de règles");
+                }
+            }
+        });
+        JButton correctIncompatibilite = new JButton("Corriger les incohérences");
+        correctIncompatibilite.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                allRegles.correctionIncompatibilite();
+                modelRegles.clear();
+                for(Regle r : allRegles.getListRegle()) {
+                    modelRegles.addElement(r.toString());
+                }
+
+            }
+        });
+        boutonsReglesPanel.add(checkIncompatibilite);
+        boutonsReglesPanel.add(correctIncompatibilite);
+
+        panelReglesEtBoutons.add(boutonsReglesPanel, BorderLayout.SOUTH);
+
+
+        //affichage de la base de connaissances
         DefaultListModel<String> model = new DefaultListModel<>();
         JList<String> baseConnueJList = new JList<>(model);
         JScrollPane scrollPanelbaseConnue = new JScrollPane(baseConnueJList);
         scrollPanelbaseConnue.setBorder(BorderFactory.createTitledBorder(null, "BASE DE CONNAISSANCES", 2, 3));
 
-        panelMain.add(scrollPanel, BorderLayout.CENTER);
-        panelMain.add(scrollPanelRegles, BorderLayout.CENTER);
-        panelTop.add(panelMain, BorderLayout.NORTH);
-        panelTop.add(scrollPanelbaseConnue, BorderLayout.CENTER);
+        panelBasesDeDepart.add(scrollPanel);
+        panelBasesDeDepart.add(panelReglesEtBoutons);
+        panelBases.add(panelBasesDeDepart, BorderLayout.NORTH);
+        panelBases.add(scrollPanelbaseConnue, BorderLayout.CENTER);
 
         //panelBottom = affichage des boutons (sur 3 lignes)
         JPanel panelBottom = new JPanel (new GridLayout(3,1));
@@ -107,7 +147,7 @@ public class Interface {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 ChainageAvant moteur = new ChainageAvant(baseConnue, allRegles);
-                moteur.appliqueRegleRecentRecursive();
+                moteur.appliqueRegleRecent();
                 model.clear();
                 for (int i=0; i<baseConnue.getFaits().size(); i++) {
                     model.addElement(baseConnue.getFaits().get(i).toString());
@@ -183,7 +223,7 @@ public class Interface {
 
         panelBottom.add(chainageArrierePanel);
 
-        principale.add(panelTop, BorderLayout.CENTER);
+        principale.add(panelBases, BorderLayout.CENTER);
         principale.add(panelBottom, BorderLayout.SOUTH);
 
 
