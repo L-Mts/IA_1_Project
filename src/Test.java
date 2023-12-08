@@ -12,7 +12,6 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) throws Exception {
     
-        //Gui view=new Gui();
         ReadFile readfile=new ReadFile("ressource/faits.txt");
         readfile.lireRegle("ressource/regles.txt");
 
