@@ -1,6 +1,7 @@
 ## Installer et lancer l'application
 
-Sur votre ordinateur, ouvrez un terminal de commandes, placez vous dans le fichier où vous souhaitez installer notre application.
+Sur votre ordinateur, ouvrez un terminal de commandes, placez vous dans le dossier où vous souhaitez installer notre application.
+
 Les commandes à lancer sont :
 ```
 git clone https://github.com/L-Mts/System_Expert_Planning.git
