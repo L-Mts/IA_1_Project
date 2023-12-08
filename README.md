@@ -13,6 +13,7 @@ projet en java
         contient la liste de tous les règles sous le format suivant:
             conclusion;liste_des_faits_séparé_par_des_virgules
             (la conclusion est séparé par des ";" et les fait séparé par des ",". Pas d'espace nulle part)
+    Attention aux lignes vides dans les fichiers, elles provoquent des erreurs
 
 
 
