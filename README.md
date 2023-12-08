@@ -28,6 +28,9 @@ java -jar IA_1_Project.jar
   
     :warning: 
     **Attention aux lignes vides dans les fichiers, elles provoquent des erreurs**
+
+  > [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
     
 - Dossier `src` : contient les fichiers des classes .java implémentées
     
