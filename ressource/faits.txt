@@ -1,4 +1,3 @@
-Est un oiseau
 Peut voler
 Est noir et blanc
 Ne peut pas voler
@@ -8,3 +7,26 @@ Vit en groupe
 Vit en couple
 Est un Manchot
 Sont de la même famille
+Est un Oiseau de proie
+Bec de pêcheur
+Bec de carnivore
+Bec long et pointu d'insectivore
+Bec court et pointu d'insectivore
+Est noir
+Est blanc
+Est rose
+Est roux
+Est rouge
+Est marron
+Est multicolore
+Est vert
+Merle noir
+moineau domestique
+Est perroquet Amazone
+Sait Imiter
+Est un Aigle
+Est une chouette blanche
+Est un faucon
+Scarlet macaw
+Est grand
+Est petit
