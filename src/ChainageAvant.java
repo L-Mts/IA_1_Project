@@ -80,7 +80,6 @@ public class ChainageAvant {
         }
 
         if(rule!=null){
-            System.out.println("Regle n°"+rule.id);
             this.baseConnue.addFait(rule.getConclusion());
             return true;
         }

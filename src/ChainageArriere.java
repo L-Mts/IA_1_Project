@@ -62,7 +62,6 @@ public class ChainageArriere {
         }
         //si on a trouvé une règle & ses prémisses à mettre dans la base sont plus que le max initialisé
         if (regle != null && max > 0) {
-            System.out.println("Regle n°" + regle.id);
             for (Fait f : regle.getListFaits()) {
                 this.baseConnue.addFait(f);
             }
@@ -97,7 +96,6 @@ public class ChainageArriere {
 
         //si on a trouvé une règle && sa conclusion est la plus récente
         if (regle != null && recent > -1) {
-            System.out.println("Regle n°" + regle.id);
             for (Fait f : regle.getListFaits()) {
                 this.baseConnue.addFait(f);
             }

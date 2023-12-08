@@ -122,7 +122,6 @@ public class Interface {
             public void actionPerformed(ActionEvent evt) {
                 model.clear();
                 baseConnue.getFaits().clear();
-                System.out.println("IN CLEAR BASE CONNUE = " +baseConnue.getFaits());  
             }
         });
 

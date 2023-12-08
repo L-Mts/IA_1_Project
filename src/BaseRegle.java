@@ -76,7 +76,6 @@ public class BaseRegle {
                 i++;
             }
             if (toDelete != null) {
-                System.out.println("SUPPRIME : R" + toDelete.id);
                 this.listRegles.remove(toDelete);
             }
 
