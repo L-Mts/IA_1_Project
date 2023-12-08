@@ -26,8 +26,8 @@ java -jar IA_1_Project.jar
                 La conclusion est séparée de sa liste de prémisses par ";" et les faits sont séparés les uns des autres par des ",".  
                 Ne pas mettre d'espace avant ou après ces séparateurs
   
-    > [!WARNING]  
-    > **Attention aux lignes vides dans les fichiers, elles provoquent des erreurs**
+    [!WARNING]  
+    **Attention aux lignes vides dans les fichiers, elles provoquent des erreurs**
     
 - Dossier `src` : contient les fichiers des classes .java implémentées
     
