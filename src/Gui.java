@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Gui extends JFrame{
+public class Gui extends JFrame {
 
     private String strategieChoisie;
     private BaseRegle mesRegles;
@@ -26,8 +26,8 @@ public class Gui extends JFrame{
         setSize(1600,800);
         setDefaultCloseOperation( DISPOSE_ON_CLOSE );
 
-        JPanel panelPrincipale=new JPanel();
-        JPanel panelBas=new JPanel();
+        JPanel panelPrincipale = new JPanel();
+        JPanel panelBas = new JPanel();
 
         this.add(panelPrincipale,BorderLayout.CENTER);
         this.add(panelBas, BorderLayout.SOUTH);

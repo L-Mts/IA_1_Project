@@ -13,7 +13,6 @@ public class Test {
     public static void main(String[] args) throws Exception {
        
         /* --- TOUS LES FAITS --- */
-        
         Fait f1 = new Fait(1, "Est un oiseau");
         Fait f2 = new Fait(2, "Peut voler");
         Fait f3 = new Fait(3, "Est noir et blanc");
@@ -24,11 +23,10 @@ public class Test {
         Fait f8 = new Fait(8, "Vit en couple");
         Fait f9= new Fait(9, "est un Manchot");
         Fait f10= new Fait(10, "sont de la même famille");
-        
 
-        /* Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
+        // Non utilisée pour l'instant donc commentée pour ne pas avoir de warning sur le fichier
         ArrayList<Fait> baseFaitsComplete = new ArrayList<Fait>(
-            List.of(f1, f2, f3, f4, f5, f6)
+            List.of(f1, f2, f3, f4, f5, f6, f7, f8, f9, f10)
         );
         
 
@@ -50,7 +48,7 @@ public class Test {
         Regle r10=new Regle(10, new ArrayList<Fait>(List.of(f6, f9)), f8);
 
         BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3,r11, r4, r5, r6, r7, r8, r9, r10)));
-    
+
 
         /* --- TEST DE L'APPLICATION --- */
 
@@ -78,6 +76,7 @@ public class Test {
         moteur.chainageSimple();
         System.out.println("Après chainage arrière, base : " + baseArriere.getFaits());
 
+    
         System.out.println();
         System.out.println(" --- CHAINAGE PLUS --- ");
         baseArriere.removeAllFaits();
@@ -117,11 +116,15 @@ public class Test {
         /*System.out.println(baseAvant.getFaits()+"\n");*/
         
 
+
+        Interface view = new Interface(baseRegle, baseFaitsComplete);
+      
         //Gui view=new Gui();
         ReadFile readfile=new ReadFile("ressource/faits.txt");
         readfile.lireRegle("ressource/regles.txt");
 
         //System.out.println(readfile.getBasefaits());
         System.out.println(readfile.getBaseregle());
+
     }
 }
