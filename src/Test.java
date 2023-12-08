@@ -48,7 +48,7 @@ public class Test {
         Regle r10=new Regle(10, new ArrayList<Fait>(List.of(f6, f9)), f8);
 
         BaseRegle baseRegle = new BaseRegle(new ArrayList<Regle>(List.of(r1, r2, r3,r11, r4, r5, r6, r7, r8, r9, r10)));
-        
+
 
         /* --- TEST DE L'APPLICATION --- */
 
@@ -109,13 +109,22 @@ public class Test {
         moteurChainageAvant.chainageSimple(); /*ok */
        /* System.out.println(baseAvant.getFaits()+"\n");
         System.out.println("le plus récent\n");
-        moteurChainageAvant.appliqueRegleRecentRecursive();
+        moteurChainageAvant.appliqueRegleRecent();
         System.out.println(baseAvant.getFaits()+"\n");
         System.out.println("avec le plus de prémices\n");
         moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
         /*System.out.println(baseAvant.getFaits()+"\n");*/
         
 
+
         Interface view = new Interface(baseRegle, baseFaitsComplete);
+      
+        //Gui view=new Gui();
+        ReadFile readfile=new ReadFile("ressource/faits.txt");
+        readfile.lireRegle("ressource/regles.txt");
+
+        //System.out.println(readfile.getBasefaits());
+        System.out.println(readfile.getBaseregle());
+
     }
 }
