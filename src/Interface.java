@@ -20,7 +20,7 @@ public class Interface {
 
         //creation de la JFrame principale
         JFrame principale = new JFrame("Systeme Expert IA 1 - Himidati & Loana");
-        principale.setSize(1600, 800);
+        principale.setExtendedState(JFrame.MAXIMIZED_BOTH);
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Point centerPoint = ge.getCenterPoint();
         Dimension windowSize = principale.getSize();
@@ -41,7 +41,8 @@ public class Interface {
         scrollPanel.setBorder(BorderFactory.createTitledBorder(null, "BASE DE FAITS", 2, 3));
 
         //affichage de la base de règles
-        JPanel panelReglesEtBoutons = new JPanel();
+        JPanel panelReglesEtBoutons = new JPanel(new GridLayout(2,1));
+
         DefaultListModel<String> modelRegles = new DefaultListModel<>();
         JList allReglesList = new JList<>(modelRegles);
         for (Regle r : allRegles.getListRegle()) {
@@ -49,10 +50,9 @@ public class Interface {
         }
         JScrollPane scrollPanelRegles = new JScrollPane(allReglesList);
         scrollPanelRegles.setBorder(BorderFactory.createTitledBorder(null, "BASE DE REGLES", 2, 3));
-        panelReglesEtBoutons.add(scrollPanelRegles, BorderLayout.SOUTH);
 
         //boutons en rapport avec la base de règles
-        JPanel boutonsReglesPanel = new JPanel();
+        JPanel reglesBoutons = new JPanel();
         JButton checkIncompatibilite = new JButton("Vérifier la cohérence");
         checkIncompatibilite.addActionListener(new ActionListener() {
             @Override
@@ -76,10 +76,12 @@ public class Interface {
 
             }
         });
-        boutonsReglesPanel.add(checkIncompatibilite);
-        boutonsReglesPanel.add(correctIncompatibilite);
 
-        panelReglesEtBoutons.add(boutonsReglesPanel, BorderLayout.SOUTH);
+        reglesBoutons.add(checkIncompatibilite);
+        reglesBoutons.add(correctIncompatibilite);
+
+        panelReglesEtBoutons.add(scrollPanelRegles, BorderLayout.CENTER);
+        panelReglesEtBoutons.add(reglesBoutons, BorderLayout.SOUTH);
 
 
         //affichage de la base de connaissances

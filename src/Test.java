@@ -115,9 +115,6 @@ public class Test {
         moteurChainageAvant.chainagePlusPremicesRecursive(); /*ok*/
         /*System.out.println(baseAvant.getFaits()+"\n");*/
         
-
-
-        Interface view = new Interface(baseRegle, baseFaitsComplete);
       
         //Gui view=new Gui();
         ReadFile readfile=new ReadFile("ressource/faits.txt");
@@ -125,6 +122,9 @@ public class Test {
 
         //System.out.println(readfile.getBasefaits());
         System.out.println(readfile.getBaseregle());
+        BaseRegle allRegle = new BaseRegle(readfile.getBaseregle());
+
+        Interface view = new Interface(allRegle, readfile.getBasefaits());
 
     }
 }
